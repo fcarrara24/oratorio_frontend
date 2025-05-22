@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo - Oratorio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="catalog-page">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <i class="fas fa-church"></i>
+            <span>Oratorio</span>
+        </div>
+        <div class="navbar-actions">
+            <button class="btn btn-icon" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <a href="carrello.html" class="btn btn-icon" id="cartButton">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="badge" id="cartBadge">0</span>
+            </a>
+            <div class="user-menu">
+                <button class="btn btn-text" id="userMenuButton">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userName">Utente</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="userDropdown">
+                    <a href="profilo.html" class="dropdown-item"><i class="fas fa-user"></i> Profilo</a>
+                    <a href="ordini.html" class="dropdown-item"><i class="fas fa-box"></i> I miei ordini</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item text-danger logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Esci
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="catalog-container">
+        <!-- Sidebar Filtri -->
+        <aside class="filters-sidebar">
+            <div class="filters-header">
+                <h3>Filtri</h3>
+                <button class="btn btn-text btn-sm" id="clearFilters">Azzera</button>
+            </div>
+            
+            <div class="filter-group">
+                <div class="filter-title">Categorie</div>
+                <div class="filter-options" id="categoryFilters">
+                    <!-- Popolato dinamicamente -->
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <div class="filter-title">Prezzo</div>
+                <div class="price-range">
+                    <div class="price-inputs">
+                        <input type="number" id="minPrice" placeholder="Min" class="form-control">
+                        <span>-</span>
+                        <input type="number" id="maxPrice" placeholder="Max" class="form-control">
+                    </div>
+                    <div class="price-slider">
+                        <div id="priceSlider"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <div class="filter-title">Disponibilità</div>
+                <div class="form-check">
+                    <input type="checkbox" id="inStockOnly" class="form-check-input">
+                    <label for="inStockOnly" class="form-check-label">Mostra solo disponibili</label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="catalog-content">
+            <div class="catalog-header">
+                <h1>Catalogo Prodotti</h1>
+                <div class="catalog-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Cerca prodotti..." class="form-control">
+                    </div>
+                    <div class="sort-options">
+                        <label for="sortSelect">Ordina per:</label>
+                        <select id="sortSelect" class="form-control">
+                            <option value="name_asc">Nome (A-Z)</option>
+                            <option value="name_desc">Nome (Z-A)</option>
+                            <option value="price_asc">Prezzo (crescente)</option>
+                            <option value="price_desc">Prezzo (decrescente)</option>
+                            <option value="newest">Più recenti</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Prodotti caricati dinamicamente -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Caricamento prodotti...</p>
+                </div>
+            </div>
+            
+            <div class="pagination" id="pagination">
+                <!-- Paginazione dinamica -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Oratorio</h3>
+                    <p>Scopri i nostri prodotti e servizi.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Utili</h3>
+                    <ul>
+                        <li><a href="#">Contattaci</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Termini e condizioni</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p><i class="fas fa-envelope"></i> info@oratorio.it</p>
+                    <p><i class="fas fa-phone"></i> +39 123 456 7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Oratorio. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/pages/catalogo.js"></script>
+</body>
+</html>

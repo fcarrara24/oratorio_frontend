@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrello - Oratorio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="cart-page">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <i class="fas fa-church"></i>
+            <span>Oratorio</span>
+        </div>
+        <div class="navbar-actions">
+            <button class="btn btn-icon" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <a href="#" class="btn btn-icon" id="cartButton">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="badge" id="cartBadge">0</span>
+            </a>
+            <div class="user-menu">
+                <button class="btn btn-text" id="userMenuButton">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userName">Utente</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="userDropdown">
+                    <a href="profilo.html" class="dropdown-item"><i class="fas fa-user"></i> Profilo</a>
+                    <a href="ordini.html" class="dropdown-item"><i class="fas fa-box"></i> I miei ordini</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item text-danger logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Esci
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-container">
+        <!-- Main Content -->
+        <main class="cart-content">
+            <div class="page-header">
+                <h1>Il tuo carrello</h1>
+                <p>Rivedi i prodotti selezionati</p>
+            </div>
+
+            <div class="cart-wrapper">
+                <!-- Lista Prodotti -->
+                <div class="cart-items" id="cartItems">
+                    <!-- Caricamento dinamico degli articoli -->
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Il tuo carrello è vuoto</h3>
+                        <p>Sembra che non ci siano articoli nel tuo carrello</p>
+                        <a href="catalogo.html" class="btn btn-primary">Vai al catalogo</a>
+                    </div>
+                </div>
+
+                <!-- Riepilogo Ordine -->
+                <aside class="order-summary">
+                    <div class="summary-card">
+                        <h3>Riepilogo ordine</h3>
+                        
+                        <div class="summary-row">
+                            <span>Subtotale</span>
+                            <span id="subtotal">€ 0.00</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Spedizione</span>
+                            <span id="shipping">€ 0.00</span>
+                        </div>
+                        
+                        <div class="summary-row total">
+                            <span>Totale</span>
+                            <span id="total">€ 0.00</span>
+                        </div>
+                        
+                        <div class="promo-code">
+                            <label for="promoCode">Codice promozionale</label>
+                            <div class="input-group">
+                                <input type="text" id="promoCode" class="form-control" placeholder="Inserisci codice">
+                                <button class="btn btn-outline" id="applyPromo">Applica</button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block" id="checkoutBtn" disabled>
+                            Procedi all'acquisto
+                        </button>
+                        
+                        <div class="secure-checkout">
+                            <i class="fas fa-lock"></i>
+                            <span>Pagamento sicuro al 100%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h4>Metodi di pagamento accettati</h4>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-apple-pay"></i>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            
+            <!-- Prodotti consigliati -->
+            <section class="recommended-products">
+                <div class="section-header">
+                    <h2>Potrebbero piacerti anche</h2>
+                    <a href="catalogo.html" class="btn btn-text">Vedi tutti</a>
+                </div>
+                <div class="products-grid" id="recommendedProducts">
+                    <!-- Prodotti consigliati caricati dinamicamente -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Oratorio</h3>
+                    <p>Completa il tuo acquisto in modo sicuro.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Utili</h3>
+                    <ul>
+                        <li><a href="#">Spedizioni</a></li>
+                        <li><a href="#">Resi e rimborsi</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contattaci</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Assistenza</h3>
+                    <p><i class="fas fa-headset"></i> Supporto 24/7</p>
+                    <p><i class="fas fa-phone"></i> +39 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> assistenza@oratorio.it</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Oratorio. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/pages/carrello.js"></script>
+</body>
+</html>
