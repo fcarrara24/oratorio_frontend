@@ -1,5 +1,3 @@
-
-
 # Specifiche Progetto: Gestionale Oratorio
 Panoramica
 Sviluppa un'applicazione web completa per la gestione di un oratorio, con autenticazione differenziata tra utenti amministratori e utenti standard. L'applicazione deve essere sviluppata utilizzando HTML, CSS e JavaScript puro, senza l'utilizzo di framework esterni.
