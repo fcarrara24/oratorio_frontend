@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Oratorio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <i class="fas fa-church"></i>
+            <span>Oratorio</span>
+        </div>
+        <div class="navbar-actions">
+            <button class="btn btn-icon" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="user-menu">
+                <button class="btn btn-text" id="userMenuButton">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userName">Utente</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu" id="userDropdown">
+                    <a href="#" class="dropdown-item"><i class="fas fa-user"></i> Profilo</a>
+                    <a href="#" class="dropdown-item"><i class="fas fa-cog"></i> Impostazioni</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item text-danger logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Esci
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul class="nav-links">
+                <li class="nav-item active">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="catalogo.html" class="nav-link">
+                        <i class="fas fa-store"></i>
+                        <span>Catalogo</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="carrello.html" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrello</span>
+                        <span class="badge" id="cartBadge">0</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-admin>
+                    <a href="admin/dashboard.html" class="nav-link">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Amministrazione</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Benvenuto, <span id="welcomeName">Utente</span></h1>
+                <p>Ecco un riepilogo delle tue attività</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon bg-primary">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Ordini Attivi</h3>
+                        <p class="stat-number" id="activeOrders">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon bg-success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Ordini Completati</h3>
+                        <p class="stat-number" id="completedOrders">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon bg-warning">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Prodotti nel Carrello</h3>
+                        <p class="stat-number" id="cartItems">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>I tuoi ultimi ordini</h2>
+                    <a href="ordini.html" class="btn btn-text">Vedi tutti</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table" id="recentOrdersTable">
+                            <thead>
+                                <tr>
+                                    <th>ID Ordine</th>
+                                    <th>Data</th>
+                                    <th>Stato</th>
+                                    <th>Totale</th>
+                                    <th>Azioni</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Popolato dinamicamente -->
+                                <tr>
+                                    <td colspan="5" class="text-center">
+                                        <p>Nessun ordine recente</p>
+                                        <a href="catalogo.html" class="btn btn-primary mt-2">Inizia a fare acquisti</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Oratorio</h3>
+                    <p>Gestisci i tuoi acquisti in modo semplice e veloce.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Utili</h3>
+                    <ul>
+                        <li><a href="#">Contattaci</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Termini e condizioni</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p><i class="fas fa-envelope"></i> info@oratorio.it</p>
+                    <p><i class="fas fa-phone"></i> +39 123 456 7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Oratorio. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/pages/dashboard.js"></script>
+</body>
+</html>
