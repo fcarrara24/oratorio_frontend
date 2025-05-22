@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oratorio - Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="logo">
+                <i class="fas fa-church"></i>
+                <h1>Oratorio</h1>
+            </div>
+            
+            <form id="loginForm" class="auth-form">
+                <h2>Accedi al tuo account</h2>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="Inserisci la tua email">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="d-flex justify-between">
+                        <label for="password">Password</label>
+                        <a href="#" class="forgot-password">Password dimenticata?</a>
+                    </div>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" required
+                               placeholder="Inserisci la tua password">
+                        <button type="button" class="toggle-password" aria-label="Mostra/Nascondi password">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Ricordami</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Accedi</button>
+                
+                <div class="auth-divider">
+                    <span>oppure</span>
+                </div>
+                
+                <a href="/registrazione.html" class="btn btn-outline btn-block">
+                    Crea un nuovo account
+                </a>
+            </form>
+            
+            <div class="auth-footer">
+                <p>© 2025 Oratorio. Tutti i diritti riservati.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>

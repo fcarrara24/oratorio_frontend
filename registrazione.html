@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione - Oratorio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="logo">
+                <i class="fas fa-church"></i>
+                <h1>Oratorio</h1>
+                <p class="subtitle">Crea un nuovo account</p>
+            </div>
+            
+            <form id="registrationForm" class="auth-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Nome</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="firstName" name="firstName" required 
+                                   placeholder="Il tuo nome">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Cognome</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="lastName" name="lastName" required 
+                                   placeholder="Il tuo cognome">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="La tua email">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" required
+                               placeholder="Crea una password" minlength="8">
+                        <button type="button" class="toggle-password" aria-label="Mostra/Nascondi password">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                    <small class="form-hint">La password deve contenere almeno 8 caratteri</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Conferma Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required
+                               placeholder="Conferma la tua password" minlength="8">
+                        <button type="button" class="toggle-password" aria-label="Mostra/Nascondi password">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group terms-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Accetto i <a href="#" class="link">Termini di servizio</a> e l'<a href="#" class="link">Informativa sulla privacy</a></label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Registrati</button>
+                
+                <div class="auth-divider">
+                    <span>oppure</span>
+                </div>
+                
+                <div class="social-login">
+                    <button type="button" class="btn btn-outline btn-block social-btn google">
+                        <i class="fab fa-google"></i> Registrati con Google
+                    </button>
+                    <button type="button" class="btn btn-outline btn-block social-btn facebook">
+                        <i class="fab fa-facebook-f"></i> Registrati con Facebook
+                    </button>
+                </div>
+                
+                <p class="auth-footer-text">
+                    Hai già un account? <a href="/login.html" class="link">Accedi</a>
+                </p>
+            </form>
+            
+            <div class="auth-footer">
+                <p>© 2025 Oratorio. Tutti i diritti riservati.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/pages/register.js"></script>
+</body>
+</html>
